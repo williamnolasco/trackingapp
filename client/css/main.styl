@@ -17,6 +17,8 @@ celeste = #2cfcfd
 verde = #00bd8f
 azul = #5998ea 
 celeste-fondo = #dfffff
+plomo = #6a6a6a
+negro = #000
 
 *
 	margin 0
@@ -82,10 +84,26 @@ style_section_container(color)
 	height 400px
 	background-size cover
 	background-position center
+input::-webkit-input-placeholder
+	font-size 1.2rem
+	color texto 
+	font-family 'Dosis-ExtraLight'
+input::-moz-placeholder
+	font-size 1.2rem
+	color texto 
+	font-family 'Dosis-ExtraLight'
+input:-ms-input-placeholder
+	font-size 1.2rem
+	color texto 
+	font-family 'Dosis-ExtraLight'
+input:-moz-placeholder
+	font-size 1.2rem
+	color texto 
+	font-family 'Dosis-ExtraLight'
 .home-image
 	width 100%
 	height 100vh
-	background-image url(../img/home.jpg)
+	background-image url(../img/home.jpeg)
 	background-size cover
 	background-position center
 	position relative
@@ -97,7 +115,7 @@ style_section_container(color)
 		/*background linear-gradient(to right bottom,
 									rgba(rosado, 0.8) 0%,
 									rgba(morado, 0.8) 100%)*/
-		background-color rgba(rosado, 0.85)
+		background-color rgba(plomo, 0.5)
 		position absolute
 		left 0
 		top 0
@@ -112,6 +130,7 @@ style_section_container(color)
 			span
 				font-size 2rem
 				color rosado
+				cursor pointer
 		.name
 			width auto
 			height auto
@@ -135,11 +154,12 @@ style_section_container(color)
 					font-family 'Dosis-SemiBold'
 					color blanco
 			a 
+				font-family 'Dosis-Light'
 				font-size 1.4rem
 				text-decoration none
 				color blanco
 				border-radius 3rem
-				border 1px solid blanco
+				border 2px solid blanco
 				padding 13px 60px
 				margin-top 50px
 		.icon-chevron-thin-down
@@ -244,5 +264,38 @@ footer
 			font-family 'Dosis-Light'
 			&:nth-of-type(2)
 				margin 0 20px
+.modal-mail-only
+	display none
+	width 100%
+	height 100%
+	background-color rgba(negro, 0.85)
+	position fixed
+	left 0
+	top 0
+	z-index 3
+	.modal-content
+		width 90%
+		height auto
+		background-color blanco
+		center_x_and_center_y(absolute)
+		padding 40px 20px
+		p 
+			color texto
+			font-size 1.4rem
+			text-align center
+		input
+			width 240px
+			margin-top 50px 
+			height 45px 
+			line-height 45px
+			padding 0 10px
+			border 1px solid plomo
+			font-size 1.2rem
+			color texto 
+			font-family 'Dosis-ExtraLight'
+			text-align center
+			&:focus
+				outline 0
+				border 1px solid rosado
 	
 	
