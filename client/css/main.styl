@@ -19,6 +19,7 @@ azul = #5998ea
 celeste-fondo = #dfffff
 plomo = #6a6a6a
 negro = #000
+plomo-claro = #a9a9a9
 
 *
 	margin 0
@@ -57,6 +58,7 @@ style_section_container(color)
 	position relative
 	left 0
 	top 0
+	overflow hidden
 .row-nowrap
 	display flex 
 	flex-flow row nowrap 
@@ -73,8 +75,8 @@ style_section_container(color)
 	text-align center
 	margin-bottom 60px
 .curve
-	width 200px
-	height 200px
+	width 170px
+	height 170px
 	background-image url(../img/curva2.png)
 	background-size cover
 	background-position center
@@ -85,51 +87,54 @@ style_section_container(color)
 	background-size cover
 	background-position center
 input::-webkit-input-placeholder
-	font-size 1.2rem
-	color texto 
+	font-size 1.3rem
+	color plomo-claro 
 	font-family 'Dosis-ExtraLight'
 input::-moz-placeholder
-	font-size 1.2rem
-	color texto 
+	font-size 1.3rem
+	color plomo-claro 
 	font-family 'Dosis-ExtraLight'
 input:-ms-input-placeholder
-	font-size 1.2rem
-	color texto 
+	font-size 1.3rem
+	color plomo-claro 
 	font-family 'Dosis-ExtraLight'
 input:-moz-placeholder
-	font-size 1.2rem
-	color texto 
+	font-size 1.3rem
+	color plomo-claro 
 	font-family 'Dosis-ExtraLight'
+.display-block
+	display block !important
 .home-image
 	width 100%
 	height 100vh
 	background-image url(../img/home.jpeg)
 	background-size cover
 	background-position center
+	background-attachment fixed
 	position relative
 	left 0
 	top 0
 	.home-background
 		width 100%
 		height 100%
-		/*background linear-gradient(to right bottom,
-									rgba(rosado, 0.8) 0%,
-									rgba(morado, 0.8) 100%)*/
-		background-color rgba(plomo, 0.5)
-		position absolute
+		background-color rgba(negro, 0.7)
+		position fixed
 		left 0
 		top 0
 		.button-surprise
+			display none
 			width 60px
 			height 60px
-			background-color blanco
+			background-color transparent
+			border-right 1px solid blanco 
+			border-bottom 1px solid blanco
 			position fixed
 			left 0
 			top 0
 			z-index 2
 			span
 				font-size 2rem
-				color rosado
+				color blanco
 				cursor pointer
 		.name
 			width auto
@@ -169,6 +174,11 @@ input:-moz-placeholder
 			bottom 0
 .functioning-container
 	style_section_container(blanco)
+	.curve
+		background-image url(../img/curva2-rosado.png)
+		left -100px
+		top -100px
+		transform rotateX(180deg)
 	.functioning-content
 		.title-section
 			style_line_down(texto)
@@ -224,6 +234,11 @@ input:-moz-placeholder
 							font-family 'Dosis-ExtraLight'
 .features-mobile
 	background-color blanco
+	.curve
+		background-image url(../img/curva2-rosado.png)
+		left -100px
+		top -100px
+		transform rotateX(180deg)
 	.features-content
 		.title-section
 			color texto 
@@ -237,7 +252,7 @@ input:-moz-placeholder
 						color texto	
 .made-by-container
 	style_section_container(rosado)
-	padding 30px 0
+	padding 20px 0
 	.curve
 		transform rotateX(180deg)
 		right -120px
@@ -246,7 +261,7 @@ input:-moz-placeholder
 		p 
 			font-size 1.4rem
 			color blanco
-			margin-bottom 30px
+			margin-bottom 20px
 			span
 				color blanco
 				margin 0 10px 
@@ -258,12 +273,15 @@ footer
 	padding 15px 0
 	ul 
 		list-style none
+		display flex 
+		flex-flow row wrap
+		justify-content space-around
+		align-items center
+		width 100%
 		li 
 			color rosado
 			font-size 1.2rem
 			font-family 'Dosis-Light'
-			&:nth-of-type(2)
-				margin 0 20px
 .modal-mail-only
 	display none
 	width 100%
@@ -274,7 +292,7 @@ footer
 	top 0
 	z-index 3
 	.modal-content
-		width 90%
+		width 85%
 		height auto
 		background-color blanco
 		center_x_and_center_y(absolute)
@@ -285,17 +303,19 @@ footer
 			text-align center
 		input
 			width 240px
-			margin-top 50px 
+			margin-top 40px 
 			height 45px 
 			line-height 45px
 			padding 0 10px
-			border 1px solid plomo
-			font-size 1.2rem
+			outline 0
+			border 0
+			border-bottom 1px solid texto
+			font-size 1.3rem
 			color texto 
 			font-family 'Dosis-ExtraLight'
 			text-align center
 			&:focus
 				outline 0
-				border 1px solid rosado
+				border-bottom 1px solid rosado
 	
 	
