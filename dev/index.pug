@@ -16,12 +16,12 @@ html(lang='es')
 				.home-content-central.column-wrap
 					p Garantiza la
 					p Productividad, eficacia y rendimiento
-					p en tu empresa
+					p en tu empresa.
+					p Ubica en tiempo real a tus colaboradores y mucho más.
 					a(href='#').button-modal Lo quiero ya
-				span.icon-chevron-thin-down
+				span.icon-chevron-thin-down.move-down
 		.functioning-container.column-wrap
-			.curve
-			.functioning-content
+			.functioning-content.row-wrap
 				p.title-section Como Funciona
 				.step.column-wrap
 					p 1
@@ -33,10 +33,12 @@ html(lang='es')
 					p 3
 					p Este es un texto de ejemplo
 		.features-container
-			.curve
 			.features-content.column-wrap
 				p.title-section Caracteristicas Web
-				.features-image
+				.slider-father
+					.slider-child.imagen-1
+					.slider-child.imagen-2
+					.slider-child.imagen-3
 				.list-features
 					.feature
 						span.icon-favorite_border
@@ -54,10 +56,12 @@ html(lang='es')
 							p Titulo
 							p Este es un texto de ejemplo, y sigue siendo de ejemplo
 		.features-container.features-mobile
-			.curve
 			.features-content.column-wrap
 				p.title-section Caracteristicas Móvil
-				.features-image
+				.slider-father-m
+					.slider-child-m.imagen-1-m
+					.slider-child-m.imagen-2-m
+					.slider-child-m.imagen-3-m
 				.list-features
 					.feature
 						span.icon-favorite_border
@@ -90,4 +94,6 @@ html(lang='es')
 			.modal-content.column-wrap
 				p Esta app, puede ser tuya, solo dejanos tu correo y nosotros nos pondremos en contacto contigo
 				input(type='text', placeholder='correo')
+
+		script(src='./client/js/jquery-3.1.1.min.js')
 		script(src='./client/js/main.js')

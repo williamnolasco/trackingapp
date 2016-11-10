@@ -20,6 +20,7 @@ celeste-fondo = #dfffff
 plomo = #6a6a6a
 negro = #000
 plomo-claro = #a9a9a9
+plomo-borde = #b5b2b2
 
 *
 	margin 0
@@ -27,7 +28,7 @@ plomo-claro = #a9a9a9
 	box-sizing border-box
 	
 html
-	font-size 16px
+	font-size 14px
 body
 	font-family 'Dosis-ExtraLight'
 	overflow-x hidden
@@ -36,6 +37,11 @@ center_x(position)
 	left 50%
 	-webkit-transform translateX(-50%)
 	transform translateX(-50%)
+center_y(position)
+	position position
+	top 50%
+	-webkit-transform translateY(-50%)
+	transform translateY(-50%)
 center_x_and_center_y(position)
 	position position
 	left 50%
@@ -58,18 +64,23 @@ style_section_container(color)
 	position relative
 	left 0
 	top 0
-	overflow hidden
 .row-nowrap
 	display flex 
 	flex-flow row nowrap 
 	justify-content center
 	align-items center
+.row-wrap 
+	display flex 
+	flex-flow row wrap 
+	justify-content center
+	align-items center	
 .column-wrap 
 	display flex 
 	flex-flow column wrap 
 	justify-content center
 	align-items center
 .title-section
+	width 100%
 	font-size 1.4rem
 	position relative
 	text-align center
@@ -81,11 +92,6 @@ style_section_container(color)
 	background-size cover
 	background-position center
 	position absolute
-.features-image
-	width 90%
-	height 400px
-	background-size cover
-	background-position center
 input::-webkit-input-placeholder
 	font-size 1.3rem
 	color plomo-claro 
@@ -104,6 +110,12 @@ input:-moz-placeholder
 	font-family 'Dosis-ExtraLight'
 .display-block
 	display block !important
+.image-slider 
+	width 100%
+	height 100%
+	background-size cover 
+	background-position center
+	position relative
 .home-image
 	width 100%
 	height 100vh
@@ -158,13 +170,15 @@ input:-moz-placeholder
 					font-size 2rem
 					font-family 'Dosis-SemiBold'
 					color blanco
+				&:nth-of-type(4)
+					display none
 			a 
 				font-family 'Dosis-Light'
 				font-size 1.4rem
 				text-decoration none
 				color blanco
 				border-radius 3rem
-				border 2px solid blanco
+				border 1px solid blanco
 				padding 13px 60px
 				margin-top 50px
 		.icon-chevron-thin-down
@@ -172,6 +186,7 @@ input:-moz-placeholder
 			font-size 3rem
 			center_x(absolute)
 			bottom 0
+			cursor pointer
 .functioning-container
 	style_section_container(blanco)
 	.curve
@@ -183,13 +198,14 @@ input:-moz-placeholder
 		.title-section
 			style_line_down(texto)
 		.step
-			width 200px
-			height 200px
-			background-image url(../img/circulo.png)
-			background-size cover
-			background-position center
+			width 240px
+			height 240px
+			border-radius 50%
+			border 2px solid rosado
+			padding 10px
+			margin 0 80px
 			&:nth-of-type(2)
-				margin 30px 0
+				margin 60px 80px
 			p 
 				font-size 1.4rem
 				color texto
@@ -204,12 +220,29 @@ input:-moz-placeholder
 		.title-section
 			color blanco
 			style_line_down(blanco)
-		.features-image
-			background-image url(../img/screenshot.png)
+		.slider-father
+			display flex
+			flex-flow row nowrap
+			width 300%
+			height 500px
+			position relative
+			left 0
+			top 0
+			.slider-child
+				width 100%
+				height 100%
+				background-position center
+				background-size cover
+			.imagen-1
+				background-image url(../img/uno.jpg)
+			.imagen-2
+				background-image url(../img/dos.jpg)
+			.imagen-3
+				background-image url(../img/tres.jpg)
 		.list-features
 			width 90%
 			height auto
-			margin-top 100px 
+			margin-top 90px 
 			margin-bottom 50px
 			.feature 
 				display flex 
@@ -243,6 +276,25 @@ input:-moz-placeholder
 		.title-section
 			color texto 
 			style_line_down(texto)
+		.slider-father-m
+			display flex
+			flex-flow row nowrap
+			width 300%
+			height 500px
+			position relative
+			left 0
+			top 0
+			.slider-child-m
+				width 100%
+				height 100%
+				background-position center
+				background-size cover
+			.imagen-1-m
+				background-image url(../img/cuatro.jpg)
+			.imagen-2-m
+				background-image url(../img/cinco.jpg)
+			.imagen-3-m
+				background-image url(../img/seis.jpg)
 		.list-features
 			.feature
 				span 
@@ -302,20 +354,93 @@ footer
 			font-size 1.4rem
 			text-align center
 		input
-			width 240px
+			width 70%
 			margin-top 40px 
 			height 45px 
 			line-height 45px
 			padding 0 10px
 			outline 0
 			border 0
-			border-bottom 1px solid texto
+			border 1px solid plomo-borde
 			font-size 1.3rem
 			color texto 
 			font-family 'Dosis-ExtraLight'
 			text-align center
 			&:focus
 				outline 0
-				border-bottom 1px solid rosado
+				border 1px solid rosado
+@media screen and (min-width: 300px)
+	.modal-mail-only
+		.modal-content
+			input
+				width 240px			
+@media screen and (min-width: 600px)
+	.home-image
+		.home-background
+			.name
+				p 
+					font-size 1.6rem;
+			.home-content-central
+				p 
+					&:nth-of-type(1), &:nth-of-type(3), &:nth-of-type(4)
+						color blanco
+						text-align center
+						font-size 1.8rem
+					&:nth-of-type(2)
+						font-size 2.2rem
+					&:nth-of-type(4)
+						display block
+				a 
+					margin-top 90px
+			.icon-chevron-thin-down
+				font-size 3.2rem
+	.functioning-container
+		.functioning-content
+			.title-section
+				font-size 1.6rem
+			.step 
+				width 270px
+				height 270px
+				p 
+					font-size 1.6rem
+	.features-container
+		.features-content
+			.title-section
+				font-size 1.6rem
+			.slider-father
+				height 600px
+			.list-features
+				.feature
+					span 
+						font-size 2.7rem
+					.feature-description
+							p 
+								&:nth-of-type(1)
+									font-size 1.7rem
+								&:nth-of-type(2)
+									font-size 1.6rem
+	.features-mobile
+		.features-content
+			.slider-father-m
+				height 600px
+	.made-by-container
+		.made-by-content
+			p
+				font-size 1.6rem
+	footer
+		ul 
+			li 
+				font-size 1.4rem
+	.modal-mail-only
+		.modal-content
+			width 500px
+			
+@media screen and (min-width: 1307px)
+	.functioning-container
+		.functioning-content
+			.step
+				&:nth-of-type(2)
+					margin-top 0
+					margin-bottom 0
 	
 	
